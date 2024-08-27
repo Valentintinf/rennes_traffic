@@ -9,3 +9,5 @@ This repo is for educational purposes only.
 
 Le code présent dans ce repo n'est absolument pas fait pour être utilisé dans un cadre commercial ou industriel. Le code comporte des bugs volontaires et les modèles d'IA sont volontairement sous-optimisés.
 Ce repo ne sert que dans un but didactique.
+
+Ce repo est le mien
