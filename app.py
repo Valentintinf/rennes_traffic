@@ -3,6 +3,7 @@ import flask_monitoringdashboard as dashboard
 import plotly.graph_objs as go
 import plotly.express as px
 import numpy as np
+import pandas as pd
 import logging
 
 
@@ -13,17 +14,33 @@ from src.utils import create_figure, prediction_from_model
 
 app = Flask(__name__)
 
-logging.getLogger('werkzeug').level = 40
+logging.getLogger('werkzeug').setLevel(logging.ERROR) 
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='errorlogs.log', encoding='utf-8', filemode='a', format="{asctime} - {levelname} - {message}", style="{", datefmt="%Y-%m-%d %H:%M", level=logging.ERROR)
+
+logging.basicConfig(
+    filename='errorlogs.log',
+    encoding='utf-8',
+    filemode='a',
+    format="{asctime} - {levelname} - {message}", 
+    style="{", datefmt="%Y-%m-%d %H:%M", 
+    level=logging.ERROR
+)
 
 dashboard.config.init_from(file='config.cfg')
 
-data_retriever = GetData(url="https://data.rennesmetropole.fr/api/explore/v2.1/catalog/datasets/etat-du-trafic-en-temps-reel/exports/json?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B")
-data = data_retriever()
+try :
+    data_retriever = GetData(url="https://data.rennesmetropole.fr/api/explore/v2.1/catalog/datasets/etat-du-trafic-en-temps-reel/exports/json?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B")
+    data = data_retriever()
+except Exception as critical:
+    logger.critical(f"App cannot retrieve data from source - Critical : {critical}")
+# creer un DataFrame vide pour continuer avec les bons noms de colonnes pour ne pas generer d'erreurs ?
 
-model = load_model('model.h5') 
+try :
+    model = load_model('model.h5')
+except Exception as critical:
+    logger.critical(f"App cannot load model - Critical : {critical}")
+    raise RuntimeError("Critical failure : Unable to load model --> Leaving the app.") from critical
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -53,4 +70,4 @@ if __name__ == '__main__':
     try:
         app.run(debug=True)
     except Exception as critical:
-        logging.critical(f'App crashed - Not launched : {critical}')
+        logging.critical(f'App crashed - Critical : {critical}')

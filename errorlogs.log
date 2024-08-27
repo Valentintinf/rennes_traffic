@@ -12,6 +12,18 @@ Arguments received by Sequential.call():
 2024-08-27 15:00 - ERROR - App - Error : 'Figure' object has no attribute 'to_jsonn'
 2024-08-27 15:06 - ERROR - App - Error : name 'graph_json' is not defined
 2024-08-27 15:18 - ERROR - App - Error : name 'response' is not defined
-2024-08-27 15:19 - ERROR - App - Error : 'Request' object has no attribute 'elapsed'
-2024-08-27 15:29 - ERROR - App - Error : 'Request' object has no attribute 'elapsed'
-2024-08-27 15:43 - ERROR - App - Error : no such column: name
+2024-08-27 17:12 - CRITICAL - Critical cannot retrieve data from source : HTTPSConnectionPool(host='datrennesmetropole.fr', port=443): Max retries exceeded with url: /api/explore/v2.1/catalog/datasets/etat-du-trafic-en-temps-reel/exports/json?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001FFA162D250>: Failed to resolve 'datrennesmetropole.fr' ([Errno 11001] getaddrinfo failed)"))
+2024-08-27 17:13 - ERROR - App - Error : name 'data' is not defined
+2024-08-27 17:16 - CRITICAL - Critical cannot retrieve data from source : HTTPSConnectionPool(host='datrennesmetropole.fr', port=443): Max retries exceeded with url: /api/explore/v2.1/catalog/datasets/etat-du-trafic-en-temps-reel/exports/json?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002116578F5D0>: Failed to resolve 'datrennesmetropole.fr' ([Errno 11001] getaddrinfo failed)"))
+2024-08-27 17:17 - ERROR - App - Error : Value of 'lat' is not the name of a column in 'data_frame'. Expected one of [] but received: lat
+2024-08-27 17:20 - CRITICAL - Cannot load model - Critical : [Errno 2] Unable to synchronously open file (unable to open file: name = 'mode.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+2024-08-27 17:21 - CRITICAL - Cannot load model - Critical : [Errno 2] Unable to synchronously open file (unable to open file: name = 'mode.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+2024-08-27 17:21 - ERROR - App - Error : name 'model' is not defined
+2024-08-27 17:21 - CRITICAL - Cannot load model - Critical : [Errno 2] Unable to synchronously open file (unable to open file: name = 'mode.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+2024-08-27 17:21 - ERROR - App - Error : name 'model' is not defined
+2024-08-27 17:22 - CRITICAL - Cannot load model - Critical : [Errno 2] Unable to synchronously open file (unable to open file: name = 'mode.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+2024-08-27 17:22 - ERROR - App - Error : 'NoneType' object has no attribute 'predict'
+2024-08-27 17:24 - CRITICAL - Cannot load model - Critical : [Errno 2] Unable to synchronously open file (unable to open file: name = 'mode.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+2024-08-27 17:26 - CRITICAL - Cannot load model - Critical : [Errno 2] Unable to synchronously open file (unable to open file: name = 'mode.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+2024-08-27 17:30 - CRITICAL - App cannot retrieve data from source - Critical : Expecting ',' delimiter: line 1 column 2590607 (char 2590606)
+2024-08-27 17:30 - CRITICAL - App cannot load model - Critical : [Errno 2] Unable to synchronously open file (unable to open file: name = 'mode.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
