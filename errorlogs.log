@@ -1,0 +1,17 @@
+2024-08-27 14:50 - ERROR - App - Error : Exception encountered when calling Sequential.call().
+
+[1mInput 0 of layer "dense_93" is incompatible with the layer: expected axis -1 of input shape to have value 24, but received input with shape (1, 25)[0m
+
+Arguments received by Sequential.call():
+  • inputs=tf.Tensor(shape=(1, 25), dtype=int32)
+  • training=False
+  • mask=None
+2024-08-27 14:53 - CRITICAL - App crashed - Not launched : 'Flask' object has no attribute 'ru'
+2024-08-27 14:54 - ERROR - App - Error : home.html
+2024-08-27 14:55 - ERROR - App - Error : home.html
+2024-08-27 15:00 - ERROR - App - Error : 'Figure' object has no attribute 'to_jsonn'
+2024-08-27 15:06 - ERROR - App - Error : name 'graph_json' is not defined
+2024-08-27 15:18 - ERROR - App - Error : name 'response' is not defined
+2024-08-27 15:19 - ERROR - App - Error : 'Request' object has no attribute 'elapsed'
+2024-08-27 15:29 - ERROR - App - Error : 'Request' object has no attribute 'elapsed'
+2024-08-27 15:43 - ERROR - App - Error : no such column: name
