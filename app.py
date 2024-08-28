@@ -29,12 +29,8 @@ logging.basicConfig(
 
 dashboard.config.init_from(file='config.cfg')
 
-try :
-    data_retriever = GetData(url="https://data.rennesmetropole.fr/api/explore/v2.1/catalog/datasets/etat-du-trafic-en-temps-reel/exports/json?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B")
-    data = data_retriever()
-except Exception as critical:
-    logger.critical(f"App cannot retrieve data from source - Critical : {critical}")
-# creer un DataFrame vide pour continuer avec les bons noms de colonnes pour ne pas generer d'erreurs ?
+data_retriever = GetData(url="https://data.rennesmetropole.fr/api/explore/v2.1/catalog/datasets/etat-du-trafic-en-temps-reel/exports/json?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B")
+data = data_retriever()
 
 try :
     model = load_model('model.h5')

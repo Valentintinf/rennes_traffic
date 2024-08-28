@@ -27,3 +27,4 @@ Arguments received by Sequential.call():
 2024-08-27 17:26 - CRITICAL - Cannot load model - Critical : [Errno 2] Unable to synchronously open file (unable to open file: name = 'mode.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
 2024-08-27 17:30 - CRITICAL - App cannot retrieve data from source - Critical : Expecting ',' delimiter: line 1 column 2590607 (char 2590606)
 2024-08-27 17:30 - CRITICAL - App cannot load model - Critical : [Errno 2] Unable to synchronously open file (unable to open file: name = 'mode.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+2024-08-28 10:01 - ERROR - Error with the request: 404 Client Error: Not Found for url: https://data.rennesmetropole.fr/api/explore/v2.1/caalog/datasets/etat-du-trafic-en-temps-reel/exports/json?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B
