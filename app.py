@@ -56,7 +56,6 @@ def index():
             graph_json = fig_map.to_json()
         except Exception as figure_error:
             logging.error(f"App creating figure - Error : {figure_error}")
-            return render_template('error.html', error_message="An error occurred while generating the traffic map. Please try again later.")
 
         try:
             selected_hour = request.form['hour']
@@ -64,13 +63,11 @@ def index():
                 raise ValueError("Invalid hour input. Must be a number between 0 and 23.")
         except ValueError as value_error:
             logging.error(f"App value - Error : {value_error}")
-            return render_template('error.html', error_message=f"Invalid input: {value_error}")
         
         try:
             cat_predict = prediction_from_model(model, selected_hour)
         except Exception as model_error:
             logging.error(f"App Prediction - Error : {model_error}")
-            return render_template('error.html', error_message="An error occurred while making a traffic prediction. Please try again later.")
         
         color_pred_map = {0:["Prédiction : Libre", "green"], 1:["Prédiction : Dense", "orange"], 2:["Prédiction : Bloqué", "red"]}
 
@@ -82,7 +79,6 @@ def index():
             graph_json = fig_map.to_json()
         except Exception as figure_error:
             logging.error(f"App get request - Error : {figure_error}")
-            return render_template('error.html', error_message="An error occurred while generating the traffic map. Please try again later.")
 
         return render_template('index.html', graph_json=graph_json)
 

@@ -28,3 +28,20 @@ Arguments received by Sequential.call():
 2024-08-27 17:30 - CRITICAL - App cannot retrieve data from source - Critical : Expecting ',' delimiter: line 1 column 2590607 (char 2590606)
 2024-08-27 17:30 - CRITICAL - App cannot load model - Critical : [Errno 2] Unable to synchronously open file (unable to open file: name = 'mode.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
 2024-08-28 10:01 - ERROR - Error with the request: 404 Client Error: Not Found for url: https://data.rennesmetropole.fr/api/explore/v2.1/caalog/datasets/etat-du-trafic-en-temps-reel/exports/json?lang=fr&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B
+2024-08-28 10:39 - ERROR - App Utils value prediction - Error : Exception encountered when calling Sequential.call().
+
+[1mInput 0 of layer "dense_93" is incompatible with the layer: expected axis -1 of input shape to have value 24, but received input with shape (1, 25)[0m
+
+Arguments received by Sequential.call():
+  • inputs=tf.Tensor(shape=(1, 25), dtype=int32)
+  • training=False
+  • mask=None
+2024-08-28 10:39 - ERROR - App Prediction - Error : Exception encountered when calling Sequential.call().
+
+[1mInput 0 of layer "dense_93" is incompatible with the layer: expected axis -1 of input shape to have value 24, but received input with shape (1, 25)[0m
+
+Arguments received by Sequential.call():
+  • inputs=tf.Tensor(shape=(1, 25), dtype=int32)
+  • training=False
+  • mask=None
+  
